@@ -1277,7 +1277,7 @@ __global__ void rhs4upper_dev( int ifirst, int ilast, int jfirst, int jlast, int
 }
 }
 //-----------------------------------------------------------------------
-__device__ void rhs4lower_dev( int ifirst, int ilast, int jfirst, int jlast, int kfirst, int klast,
+__global__ void rhs4lower_dev( int ifirst, int ilast, int jfirst, int jlast, int kfirst, int klast,
 			       int nk,
 			       float_sw4* a_lu, float_sw4* a_u, float_sw4* a_mu, float_sw4* a_lambda, 
 			       float_sw4 h, float_sw4* a_strx, float_sw4* a_stry, float_sw4* a_strz,
@@ -7970,7 +7970,7 @@ __global__ void rhs4upper_dev_rev( int ifirst, int ilast, int jfirst, int jlast,
 }
 
 //-----------------------------------------------------------------------
-__device__ void rhs4lower_dev_rev( int ifirst, int ilast, int jfirst, int jlast, int kfirst, int klast,
+__global__ void rhs4lower_dev_rev( int ifirst, int ilast, int jfirst, int jlast, int kfirst, int klast,
 				   int nk,
 				   float_sw4* a_lu, float_sw4* a_u, float_sw4* a_mu, float_sw4* a_lambda, 
 				   float_sw4 h, float_sw4* a_strx, float_sw4* a_stry, float_sw4* a_strz,
