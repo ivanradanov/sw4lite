@@ -1,0 +1,16 @@
+* 
+had to tag GridPointSource::getFxyz and getFxyztt as __host__ __device__
+
+* 
+Had to work around the min/max cuda-mode clang bug
+
+* 
+Why is __device__ rhs4lower_dev in [src/device-routines.C] not used anywhere and
+why is it declared in [src/device-routines.h] as __global__ ?
+
+I don't know but for now I changed the definitions to __global__ to avoid a bug
+in cpucuda (device functions should become static always-inline which doesnt
+happen in this case for some reason, perhaps because of the declaration?)
+
+* 
+-ccbin option does not exist in clang, maybe add a dummy one which does nothing
